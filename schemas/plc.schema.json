@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mcp-ads/schemas/plc.schema.json",
+  "title": "Configuración de conexión ADS al PLC",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ams_net_id", "port"],
+  "properties": {
+    "ams_net_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "AMS Net ID del destino (p. ej. 192.168.1.10.1.1)"
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Puerto ADS (TwinCAT 3: 851=PLC1; TwinCAT 2: 801 típico)"
+    },
+    "timeout_ms": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Timeout por defecto de pyads (opcional)"
+    },
+    "ip_address": {
+      "type": "string",
+      "minLength": 1,
+      "description": "IPv4 del PLC (opcional). Útil si el destino no sigue la convención IP en el AMS Net ID"
+    },
+    "local_ams_net_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "AMS Net ID del cliente (solo Linux/pyads). Debe coincidir con la ruta estática en TwinCAT"
+    }
+  }
+}

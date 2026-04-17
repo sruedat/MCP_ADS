@@ -1,0 +1,15 @@
+[
+  {
+    "id": "contador",
+    "ads_path": "MAIN.nContador",
+    "plc_type": "DINT",
+    "access": "read_write"
+  },
+  {
+    "id": "nombre",
+    "ads_path": "MAIN.sNombre",
+    "plc_type": "STRING",
+    "string_length": 80,
+    "access": "read"
+  }
+]

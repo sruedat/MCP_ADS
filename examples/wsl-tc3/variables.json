@@ -1,0 +1,8 @@
+[
+  {
+    "id": "test",
+    "ads_path": "MAIN.test",
+    "plc_type": "BOOL",
+    "access": "read_write"
+  }
+]

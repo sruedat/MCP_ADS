@@ -1,0 +1,15 @@
+# Servidor MCP ADS (stdio). Uso típico con Cursor: ver docs/docker-ubuntu.md
+services:
+  mcp-ads:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mcp-ads:local
+    stdin_open: true
+    tty: false
+    volumes:
+      # Carpeta con plc.json y variables.json (ajusta si usas otro perfil)
+      - ./examples/wsl-tc3:/config:ro
+    environment:
+      MCP_ADS_CONFIG_DIR: /config
+      MCP_ADS_LOG_LEVEL: INFO

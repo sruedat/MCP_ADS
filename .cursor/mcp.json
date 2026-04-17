@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "beckhoff-ads": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-v",
+        "examples/wsl-tc3:/config:ro",
+        "-e",
+        "MCP_ADS_CONFIG_DIR=/config",
+        "-e",
+        "MCP_ADS_LOG_LEVEL=INFO",
+        "mcp-ads:local"
+      ],
+      "cwd": "C:\\Users\\srued\\Documents\\MCP_ADS"
+    }
+  }
+}

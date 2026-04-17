@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-ads"
+version = "0.1.0"
+description = "Servidor MCP (stdio) para variables TwinCAT mediante ADS (pyads)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "MCP_ADS" }]
+dependencies = [
+    "mcp>=1.2.0",
+    "pyads>=3.4.0",
+    "jsonschema>=4.20.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+mcp-ads = "mcp_ads.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+mcp_ads = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
